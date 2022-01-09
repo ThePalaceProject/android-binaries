@@ -1,4 +1,4 @@
-name: Start test run on SamsungGalaxyS21_11
+name: Start test run on GooglePixel5_12
 
 on:
   schedule:
