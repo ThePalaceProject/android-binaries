@@ -2,7 +2,7 @@ name: Start test run on SamsungGalaxyS21Ultra_11
 
 on:
   schedule:
-    - cron:  '00 23 * * 0-5'
+    - cron:  '00 23 * * 6'
 
 jobs:
   build:
