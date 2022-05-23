@@ -1,0 +1,30 @@
+name: Start test run on SamsungGalaxyS21Ultra_11
+
+on:
+  schedule:
+    - cron:  '00 4 * * 2'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Upload to browserstack and trigger tests
+        run: |
+           APP_UPLOAD_RESPONSE=$(curl -u "${{ secrets.BROWSERSTACK_USERNAME }}:${{ secrets.BROWSERSTACK_ACCESSKEY }}" -X POST https://api-cloud.browserstack.com/app-automate/upload -F "file=@$GITHUB_WORKSPACE/$(find . -type f -name "palace-debug.apk")")
+           APP_ID=$(echo $APP_UPLOAD_RESPONSE | jq -r ".app_url")
+           BUILD_NAME=$(find . -type f -name "palace-debug.apk" -execdir basename {} .apk \;)
+           if [ $APP_ID != null ]; then
+             echo "Apk uploaded to BrowserStack with app id : $APP_ID";
+             #echo "export BROWSERSTACK_APP_ID=$APP_ID" >> $BASH_ENV;
+             export BROWSERSTACK_APP_ID=$APP_ID
+             #source $BASH_ENV;
+             echo "Setting value of BROWSERSTACK_APP_ID in environment variables to $APP_ID";
+           else
+             UPLOAD_ERROR_MESSAGE=$(echo $APP_UPLOAD_RESPONSE | jq -r ".error")
+             echo "App upload failed, reason : ",$UPLOAD_ERROR_MESSAGE
+                          exit 1;
+           fi
+           echo "Triggering autotests"
+           curl -X POST -H "Accept:application/vnd.github.v3+json" https://api.github.com/repos/ThePalaceProject/mobile-integration-tests/actions/workflows/maven.yml/dispatches -d '{"ref":"main", "inputs":{"test_tag":"(@tier1 or @tier2 or @tier3)","bs_app_link":"'"$APP_ID"'","device_name_and_version":"SamsungGalaxyS21Ultra_11","platform_name":"android","build_name":"'"$BUILD_NAME"'"}}' -H "Authorization: token ${{secrets.PERSONAL_TOKEN}}"
