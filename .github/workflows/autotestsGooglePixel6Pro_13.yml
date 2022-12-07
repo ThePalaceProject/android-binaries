@@ -2,7 +2,7 @@ name: Start test run on GooglePixel6Pro_13
 
 on:
   schedule:
-    - cron:  '00 1 * * 2,4'
+    - cron:  '30 00 * * 2,4'
 
 jobs:
   build:
