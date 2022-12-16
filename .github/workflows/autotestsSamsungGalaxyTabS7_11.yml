@@ -2,7 +2,7 @@ name: Start test run on SamsungGalaxyTabS7_11
 
 on:
   schedule:
-    - cron:  '00 1 * * 6'
+    - cron:  '00 1 * 6 6'
 
 jobs:
   build:
