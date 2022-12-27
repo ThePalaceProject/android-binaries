@@ -2,7 +2,7 @@ name: Test on GooglePixel6Pro_13 in Lyrasis
 
 on:
   schedule:
-    - cron:  '30 19 * * 4'
+    - cron:  '30 19 * 6 4'
 
 jobs:
   build:
