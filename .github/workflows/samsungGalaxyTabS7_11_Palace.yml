@@ -1,8 +1,8 @@
-name: Start test run on SamsungGalaxyTabS7_11
+name: Tests on SamsungGalaxyTabS7_11 in Palace
 
 on:
   schedule:
-    - cron:  '00 1 * 6 6'
+    - cron:  '30 12 * * 0'
 
 jobs:
   build:
@@ -27,4 +27,4 @@ jobs:
                           exit 1;
            fi
            echo "Triggering autotests"
-           curl -X POST -H "Accept:application/vnd.github.v3+json" https://api.github.com/repos/ThePalaceProject/mobile-integration-tests/actions/workflows/maven.yml/dispatches -d '{"ref":"main", "inputs":{"test_tag":"(@tier1 or @tier2 or @tier3)","bs_app_link":"'"$APP_ID"'","device_name_and_version":"SamsungGalaxyTabS7_11","platform_name":"android","build_name":"'"$BUILD_NAME"'"}}' -H "Authorization: token ${{secrets.PERSONAL_TOKEN}}"
+           curl -X POST -H "Accept:application/vnd.github.v3+json" https://api.github.com/repos/ThePalaceProject/mobile-integration-tests/actions/workflows/maven.yml/dispatches -d '{"ref":"main", "inputs":{"test_tag":"@tier2","bs_app_link":"'"$APP_ID"'","device_name_and_version":"SamsungGalaxyTabS7_11","platform_name":"android","build_name":"'"$BUILD_NAME"'"}}' -H "Authorization: token ${{secrets.PERSONAL_TOKEN}}"
