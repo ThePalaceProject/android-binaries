@@ -2,7 +2,7 @@ name: Test on GooglePixel6Pro_13 in Palace
 
 on:
   schedule:
-    - cron:  '30 23 * * 0'
+    - cron:  '30 7 * * 3'
 
 jobs:
   build:
