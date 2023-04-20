@@ -2,7 +2,7 @@ name: Test on SamsungGalaxyS22Ultra_12 in Palace
 
 on:
   schedule:
-    - cron:  '0 1 * * 2'
+    - cron:  '0 9 * * 5'
 
 jobs:
   build:
