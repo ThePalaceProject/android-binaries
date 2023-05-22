@@ -2,7 +2,7 @@ name: Test on SamsungGalaxyS22Ultra_12 in LYRASIS
 
 on:
   schedule:
-    - cron:  '45 10 * * 1'
+    - cron:  '00 19 * * 1'
 
 jobs:
   build:
