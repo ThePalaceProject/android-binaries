@@ -3,6 +3,10 @@ name: Smoke tests on GooglePixel6Pro_13
 on:
   schedule:
     - cron:  '30 1 * * 1,5'
+  push:
+    branches:
+      - main
+
 
 jobs:
   build:
