@@ -3,9 +3,7 @@ name: Smoke tests on SamsungGalaxyS22Ultra_12
 on:
   schedule:
     - cron:  '30 1 * * 3'
-  push:
-    branches:
-      - main
+  
 
 jobs:
   build:
