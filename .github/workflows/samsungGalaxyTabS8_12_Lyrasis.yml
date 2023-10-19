@@ -2,7 +2,7 @@ name: Tests SamsungGalaxyTabS8_12 in Lyrasis
 
 on:
   schedule:
-    - cron:  '0 12 * * 6'
+    - cron:  '30 11 * * 6'
 
 jobs:
   build:
