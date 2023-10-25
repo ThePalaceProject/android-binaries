@@ -5,7 +5,7 @@ on:
   #   branches:
   #     - main
   schedule:
-    - cron:  '10 20 * * 2'
+    - cron:  '45 10 * * 3'
   
 jobs:
   build:
@@ -30,4 +30,4 @@ jobs:
                           exit 1;
            fi
            echo "Triggering autotests"
-           curl -X POST -H "Accept:application/vnd.github.v3+json" https://api.github.com/repos/ThePalaceProject/mobile-integration-tests-new/actions/workflows/maven.yml/dispatches -d '{"ref":"main", "inputs":{"test_tag":"@report","bs_app_link":"'"$APP_ID"'","device_name_and_version":"SamsungGalaxyS22Ultra_12","platform_name":"android","build_name":"'"$BUILD_NAME"'"}}' -H "Authorization: token ${{secrets.PERSONAL_TOKEN}}"
+           curl -X POST -H "Accept:application/vnd.github.v3+json" https://api.github.com/repos/ThePalaceProject/mobile-integration-tests-new/actions/workflows/maven.yml/dispatches -d '{"ref":"main", "inputs":{"test_tag":"@smoke","bs_app_link":"'"$APP_ID"'","device_name_and_version":"SamsungGalaxyS22Ultra_12","platform_name":"android","build_name":"'"$BUILD_NAME"'"}}' -H "Authorization: token ${{secrets.PERSONAL_TOKEN}}"
