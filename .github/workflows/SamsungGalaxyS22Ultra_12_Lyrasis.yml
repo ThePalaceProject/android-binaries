@@ -1,8 +1,8 @@
-name: Test on SamsungGalaxyS22Ultra_12 in LYRASIS
+name: Samsung Galaxy S22 Ultra 12 LYRASIS
 
 on:
   schedule:
-    - cron:  '30 3 * * 3'
+    - cron:  '30 3 * * 2'
 
 jobs:
   build:
