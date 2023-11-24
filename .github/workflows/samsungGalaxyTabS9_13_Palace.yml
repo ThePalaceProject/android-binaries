@@ -1,8 +1,8 @@
-name: Tests on SamsungGalaxyTabS8_12 in Palace
+name: Samsung Galaxy Tab S9 13 in Palace
 
 on:
   schedule:
-    - cron:  '0 19 * * 6'
+    - cron:  '30 1 * * 6'
 
 jobs:
   build:
