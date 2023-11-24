@@ -1,8 +1,8 @@
-name: Test on SamsungGalaxyS22Ultra_12 in Palace
+name:  Samsung Galaxy S22 Ultra 12 Palace
 
 on:
   schedule:
-    - cron:  '30 20 * * 2'
+    - cron:  '30 20 * * 1'
 
 jobs:
   build:
