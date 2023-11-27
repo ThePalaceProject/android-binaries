@@ -2,7 +2,7 @@ name: Samsung Galaxy S22 Ultra 12 LYRASIS
 
 on:
   schedule:
-    - cron:  '30 3 * 9 2'
+    - cron:  '30 3 * * 1'
 
 jobs:
   build:
