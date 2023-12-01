@@ -2,7 +2,7 @@ name: Samsung Galaxy S21 12 LYRASIS
 
 on:
   schedule:
-    - cron:  '15 10 * * 5'
+    - cron:  '30 3 * 9 5'
 
 jobs:
   build:
