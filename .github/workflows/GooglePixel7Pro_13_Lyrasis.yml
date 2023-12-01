@@ -2,7 +2,7 @@ name: Google Pixel 7 Pro 13 Lyrasis
 
 on:
   schedule:
-    - cron:  '30 8 * * 6'
+    - cron:  '30 8 * 9 6'
 
 jobs:
   build:
