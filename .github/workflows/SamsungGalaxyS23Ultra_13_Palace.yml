@@ -2,7 +2,7 @@ name: Samsung Galaxy S23 Ultra 13 Palace
 
 on:
   schedule:
-    - cron:  '30 20 * * 2'
+    - cron:  '30 20 * 9 2'
 
 jobs:
   build:
