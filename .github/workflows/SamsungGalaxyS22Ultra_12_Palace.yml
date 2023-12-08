@@ -2,7 +2,7 @@ name:  Samsung Galaxy S22 Ultra 12 Palace
 
 on:
   schedule:
-    - cron:  '30 20 * 9 0'
+    - cron:  '30 20 * * 0'
 
 jobs:
   build:
