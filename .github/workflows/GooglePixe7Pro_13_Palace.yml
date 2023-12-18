@@ -2,7 +2,7 @@ name: Google Pixel 7 Pro 13 in Palace
 
 on:
   schedule:
-    - cron:  '30 15 * * 6'
+    - cron:  '30 15 * 9 6'
 
 jobs:
   build:
