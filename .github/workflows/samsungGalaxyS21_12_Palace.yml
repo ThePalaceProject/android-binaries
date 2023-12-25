@@ -2,7 +2,7 @@ name: Samsung Galaxy S21 12 Palace
 
 on:
   schedule:
-    - cron:  '30 20 * 9 4'
+    - cron:  '30 20 * * 4'
 
 jobs:
   build:
