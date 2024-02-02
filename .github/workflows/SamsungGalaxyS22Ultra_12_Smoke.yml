@@ -3,7 +3,7 @@ name: Smoke tests on SamsungGalaxyS22Ultra_12
 on:
   push:
     branches:
-      - ma
+      - main
   
 jobs:
   build:
