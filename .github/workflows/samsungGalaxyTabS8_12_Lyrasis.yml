@@ -2,13 +2,13 @@ name: Samsung Galaxy Tab S8 12 Lyrasis
 
 on:
   schedule:
-    - cron:  '30 18 * * 5'
+    - cron:  '00 15 * * 5'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Upload to browserstack and trigger tests
         run: |

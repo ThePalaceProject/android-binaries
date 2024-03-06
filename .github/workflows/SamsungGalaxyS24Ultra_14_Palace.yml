@@ -1,14 +1,14 @@
-name: Samsung Galaxy S23 Ultra 13 Palace
+name: Samsung Galaxy S24 Ultra 14 Palace
 
 on:
   schedule:
-    - cron:  '00 5 * * 3'
+    - cron:  '00 3 * * 1'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Upload to browserstack and trigger tests
         run: |
@@ -27,4 +27,4 @@ jobs:
                           exit 1;
            fi
            echo "Triggering autotests"
-           curl -X POST -H "Accept:application/vnd.github.v3+json" https://api.github.com/repos/ThePalaceProject/mobile-integration-tests-new/actions/workflows/maven.yml/dispatches -d '{"ref":"main", "inputs":{"test_tag":"@tier2","bs_app_link":"'"$APP_ID"'","device_name_and_version":"SamsungGalaxyS23Ultra_13","platform_name":"android","build_name":"'"$BUILD_NAME"'"}}' -H "Authorization: token ${{secrets.PERSONAL_TOKEN}}"
+           curl -X POST -H "Accept:application/vnd.github.v3+json" https://api.github.com/repos/ThePalaceProject/mobile-integration-tests-new/actions/workflows/maven.yml/dispatches -d '{"ref":"main", "inputs":{"test_tag":"@tier2","bs_app_link":"'"$APP_ID"'","device_name_and_version":"SamsungGalaxyS24Ultra_14","platform_name":"android","build_name":"'"$BUILD_NAME"'"}}' -H "Authorization: token ${{secrets.PERSONAL_TOKEN}}"
