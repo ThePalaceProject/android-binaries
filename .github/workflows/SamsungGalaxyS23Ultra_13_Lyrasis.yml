@@ -2,7 +2,7 @@ name: Samsung Galaxy S23 Ultra 13 LYRASIS
 
 on:
   schedule:
-    - cron:  '00 5 * * 4'
+    - cron:  '30 0 * * 3'
 
 jobs:
   build:
